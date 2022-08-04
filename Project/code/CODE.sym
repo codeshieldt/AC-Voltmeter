@@ -1,0 +1,100 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     lcd
+008     PSP_DATA
+015     CCP_1_LOW
+015-016 CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B-01C CCP_2
+01C     CCP_2_HIGH
+01E     adresh
+01F     adcon0
+021-022 MAIN.x
+023-024 rd_adc.value
+023-024 @DIV1616.P1
+023     lcd_init.i
+023     MAIN.@SCRATCH1
+024-025 @PRINTF_LU_84.P1
+024     lcd_init.@SCRATCH1
+025-026 @DIV1616.P1
+026     @PRINTF_LU_84.@SCRATCH1
+027     @DIV1616.@SCRATCH1
+027     @PRINTF_LU_84.@SCRATCH2
+028     @PRINTF_LU_84.@SCRATCH3
+029     @PRINTF_LU_84.@SCRATCH4
+02A     @PRINTF_LU_84.@SCRATCH5
+02B     @PRINTF_LU_84.@SCRATCH6
+02C     @PRINTF_LU_84.@SCRATCH7
+02D     lcd_putc.c
+02E     lcd_gotoxy.x
+02E     @delay_ms1.P1
+02F     lcd_gotoxy.y
+030     lcd_gotoxy.address
+031     lcd_gotoxy.@SCRATCH1
+032     lcd_send_byte.address
+033     lcd_send_byte.n
+034     lcd_read_byte.low
+034     lcd_send_byte.@SCRATCH1
+035     lcd_send_nibble.n
+035     lcd_read_byte.high
+036     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+09E     adresl
+09F     adcon1
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0022  @delay_ms1
+0004  LCD_INIT_STRING
+0044  lcd_read_byte
+0037  lcd_send_nibble
+0043  lcd_send_byte
+007D  lcd_init
+00FA  lcd_gotoxy
+00E3  lcd_putc
+017D  MAIN
+00BC  @DIV1616
+000C  @const236
+0118  @PRINTF_LU_84
+00A9  rd_adc
+017D  @cinit
+
+Project Directory:
+    E:\semester no 4\embedded system\LAB\PROJECT\AHMED REHMAN-190401043\code\
+
+Project Files:
+    CODE.c
+    C:\Program Files (x86)\PICC\devices\16f877a.h
+    C:\Program Files (x86)\PICC\drivers\lcd.c
+    C:\Program Files (x86)\PICC\drivers\math.h
+
+Units:
+    CODE.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      CODE.err
+    Ext Symbols: CODE.esym
+    INHX8:       CODE.hex
+    Symbols:     CODE.sym
+    List:        CODE.lst
+    Debug/COFF:  CODE.cof
+    Project:     CODE.PJT
+    Call Tree:   CODE.tre
+    Statistics:  CODE.sta
